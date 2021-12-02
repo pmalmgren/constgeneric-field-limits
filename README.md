@@ -2,7 +2,7 @@
 
 # Using const generics for input validation
 
-This project is an experiment to see if using const generics for field validation, specifically text length, is relatively straightforward and could be used for other cases, such as data serialization or form validation.
+This project is an experiment to see if using const generics for field validation, specifically text length, is relatively straightforward and could be used for things like data serialization or form validation.
 
 This approach hopes to provide information about what input lengths are valid at the type level.
 
@@ -45,7 +45,7 @@ type WeirdFieldType = LengthLimitedName<0, 0>;
 type WeirdFieldType = LengthLimitedName<100, 10>;
 ```
 
-Also the type level name isn't very helpful. Maybe a macro would be better:
+The type parameter names aren't named, which isn't very helpful for readability. Maybe a macro would be better:
 
 ```rust
 macro_rules! LengthLimitedField{
